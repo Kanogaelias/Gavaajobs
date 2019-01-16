@@ -20,3 +20,8 @@ def list_jobs(request):
         return render(
             request, "jobs/list_jobs.html", {"jobs": Job.objects.all()}
         )
+
+def detail_job(request, pk):
+    job = Job.objects.get(pk=pk)
+    context = {"job": job}
+    return render(request, "jobs/detail_job.html", context)
