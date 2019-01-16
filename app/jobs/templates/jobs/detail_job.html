@@ -1,0 +1,11 @@
+{% extends 'jobs/base.html' %}
+  {% block content %}
+  <div class="content">
+    <h4 class="title is-4">{{ job.title }}</h4>
+    <h6 class="subtitle is-6">{{ job.company }}</h6>
+    <p>{{ job.description }}</p>
+    <p>{{ job.email }}</p>
+  </div>
+    <a href="{% url 'update-job' job.id %}" class="button">Update</a>
+  <a href="{% url 'delete-job' job.id %}" class="button is-danger">Delete</a>
+  {% endblock %}
