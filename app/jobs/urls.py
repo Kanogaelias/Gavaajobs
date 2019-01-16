@@ -3,3 +3,5 @@ from .views import create_job, list_jobs, detail_job, update_job, delete_job
 
 urlpatterns = [
     path('list/', list_jobs, name='list-jobs'),
+    path('create/', create_job, name='create-job'),
+    path('detail/<pk>/', detail_job, name='detail-job'),
