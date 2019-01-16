@@ -14,3 +14,9 @@ def create_job(request):
             messages.success(request, message="Job created successfully.")
             return redirect(reverse("list-jobs"))
     return render(request, "jobs/create_job.html", {"form": job_form})
+
+def list_jobs(request):
+    if request.method == "GET":
+        return render(
+            request, "jobs/list_jobs.html", {"jobs": Job.objects.all()}
+        )
